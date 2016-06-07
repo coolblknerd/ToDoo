@@ -40,6 +40,11 @@ class ItemsController < ApplicationController
     redirect_to root_path
   end
 
+  def complete
+    @item.update_attribute(:completed_at, Time.now)
+    redirect_to root_path
+  end
+
   private
 
   def find_item
@@ -47,7 +52,7 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:title, :description)
+    params.require(:item).permit(:title, :description, :completed_at)
   end
 
 end
