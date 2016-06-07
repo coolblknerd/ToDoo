@@ -1,5 +1,5 @@
 <h1>Edit <%= @item.title %></h1>
 
-<%= render "form" %>
+<%= render "form" %><br>
 
-<%= link_to "Home", root_path, class: "btn btn-primary" %>
+<%= link_to "Back", item_path(@item), class: "btn btn-primary" %>
