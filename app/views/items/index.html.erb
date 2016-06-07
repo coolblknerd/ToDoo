@@ -1,0 +1,9 @@
+<h1>ToDoo</h1>
+
+<% @items.each do |item| %>
+
+  <h3><%= link_to item.title, item_path(item) %></h3>
+  <p><%= truncate(item.description, length: 50) %></p>
+<% end %>
+
+<%= link_to "New Item", new_item_path, class: "btn btn-primary" %>

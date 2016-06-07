@@ -1,0 +1,7 @@
+
+<h2><%= @item.title %></h2>
+<h5>Created <%= time_ago_in_words(@item.created_at) %> ago</h5>
+<h4><%= link_to "Edit", edit_item_path(@item) %> | <%= link_to "Delete", item_path(@item), method: :delete, data: { confirm: "Are you sure?" } %></h4>
+<p><%= @item.description %></p>
+
+<%= link_to "Home", root_path, class: "btn btn-primary" %>
