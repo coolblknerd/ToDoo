@@ -1,9 +1,10 @@
-<h1>ToDoo</h1>
+<% if user_signed_in? %>
+  <% @items.each do |item| %>
 
-<% @items.each do |item| %>
+    <h3><%= link_to item.title, item_path(item) %></h3>
+    <p><%= truncate(item.description, length: 50) %></p>
 
-  <h3><%= link_to item.title, item_path(item) %></h3>
-  <p><%= truncate(item.description, length: 50) %></p>
+  <% end %>
+<% else %>
+  <%= render 'welcome_page' %>
 <% end %>
-
-<%= link_to "New Item", new_item_path, class: "btn btn-primary" %>
